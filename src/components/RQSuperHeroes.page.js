@@ -6,11 +6,20 @@ const fetchSuperHeroes = () => {
 };
 
 export const RQSuperHeroesPage = () => {
+    const onSuccess = (data) => {
+        console.log('Perform side effect after data fetching', data);
+    };
+
+    const onError = (error) => {
+        console.log('Perform side effect after encountering an error', error);
+    };
+
     const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
         'super-heroes',
         fetchSuperHeroes,
         {
-            enabled: false,
+            onSuccess,
+            onError,
         }
     );
 
