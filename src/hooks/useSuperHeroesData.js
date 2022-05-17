@@ -9,11 +9,11 @@ export const useSuperHeroesData = (onSuccess, onError) => {
     return useQuery('super-heroes', fetchSuperHeroes, {
         onSuccess,
         onError,
-        select: (data) => {
-            const superHeroesNames = data.data.map(
-                (superHero) => superHero.name
-            );
-            return superHeroesNames;
-        },
+        // select: (data) => {
+        //     const superHeroesNames = data.data.map(
+        //         (superHero) => superHero.name
+        //     );
+        //     return superHeroesNames;
+        // },
     });
 };
