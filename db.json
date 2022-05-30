@@ -24,6 +24,11 @@
       "name": "Spider Man",
       "alterEgo": "Peter Parker",
       "id": 5
+    },
+    {
+      "name": "Shazam",
+      "alterEgo": "Billy Batson",
+      "id": 6
     }
   ],
   "friends": [

@@ -27,12 +27,12 @@ export const useAddSuperHeroData = () => {
     const queryClient = useQueryClient();
 
     return useMutation(
-        addSuperHero
-        // {
-        // onSuccess: data => {
-        //   /** Query Invalidation Start */
-        //   // queryClient.invalidateQueries('super-heroes')
-        //   /** Query Invalidation End */
+        addSuperHero,
+        {
+        onSuccess: data => {
+          /** Query Invalidation Start */
+          queryClient.invalidateQueries('super-heroes')
+          /** Query Invalidation End */
 
         //   /** Handling Mutation Response Start */
         // queryClient.setQueryData('super-heroes', oldQueryData => {
@@ -42,7 +42,7 @@ export const useAddSuperHeroData = () => {
         //   }
         // })
         //   /** Handling Mutation Response Start */
-        // },
+        },
         /**Optimistic Update Start */
         //   onMutate: async newHero => {
         //     await queryClient.cancelQueries('super-heroes')
@@ -65,6 +65,6 @@ export const useAddSuperHeroData = () => {
         //     queryClient.invalidateQueries('super-heroes')
         //   }
         /**Optimistic Update End */
-        // }
+        }
     );
 };
