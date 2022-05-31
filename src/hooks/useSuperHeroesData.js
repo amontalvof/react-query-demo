@@ -31,17 +31,17 @@ export const useAddSuperHeroData = () => {
         {
         onSuccess: data => {
           /** Query Invalidation Start */
-          queryClient.invalidateQueries('super-heroes')
+        //   queryClient.invalidateQueries('super-heroes')
           /** Query Invalidation End */
 
-        //   /** Handling Mutation Response Start */
-        // queryClient.setQueryData('super-heroes', oldQueryData => {
-        //   return {
-        //     ...oldQueryData,
-        //     data: [...oldQueryData.data, data.data]
-        //   }
-        // })
-        //   /** Handling Mutation Response Start */
+          /**  Handling Mutation Response Start */
+        queryClient.setQueryData('super-heroes', oldQueryData => {
+          return {
+            ...oldQueryData,
+            data: [...oldQueryData.data, data.data]
+          }
+        })
+          /** Handling Mutation Response Start */
         },
         /**Optimistic Update Start */
         //   onMutate: async newHero => {
