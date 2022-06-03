@@ -39,6 +39,11 @@
       "name": "Aquaman",
       "alterEgo": "Arthur Curry",
       "id": 8
+    },
+    {
+      "name": "Hulk",
+      "alterEgo": "Bruce Banner",
+      "id": 9
     }
   ],
   "friends": [
